@@ -28,6 +28,7 @@ module.exports = {
         ]
     },
     resolve: {
+        root: __dirname,
         extensions: [ '', '.js', '.jsx' ]
     },
     stats: output_options,
