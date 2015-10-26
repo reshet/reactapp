@@ -1,7 +1,8 @@
 import React    from 'react';
+import ReactDOM from 'react-dom';
 import $        from 'jquery';
 import Body     from './body/Body';
 
 $(() => {
-    React.render(<Body />, document.getElementById('app-container'));
+    ReactDOM.render(<Body />, document.getElementById('app-container'));
 });

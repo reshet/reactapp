@@ -16,19 +16,22 @@ module.exports = {
     },
     module: {
         loaders: [
-            {
-                test: /\.jsx/,
-                exclude: /node_modules/,
-                loader: 'react-hot!babel?optional[]=es7.classProperties&optional[]=es7.objectRestSpread'
-            },
-            {
-                test: /\.less$/,
-                loader: 'style!css!less'
-            }
+          {
+              test: /\.jsx?$/,
+              exclude: /node_modules/,
+              loader: [
+                  'react-hot',
+                  'babel?optional[]=es7.classProperties&optional[]=es7.objectRestSpread',
+                  'eslint'
+              ].join('!')
+          },
+          {
+              test: /\.less$/,
+              loader: 'style!css!less'
+          }
         ]
     },
     resolve: {
-        root: __dirname,
         extensions: [ '', '.js', '.jsx' ]
     },
     stats: output_options,

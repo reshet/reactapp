@@ -1,32 +1,38 @@
-import React      from 'react';
+import React          from 'react';
 import { doExamples } from './utils/inher';
+import AppDispatcher  from './utils/flux/AppDispatcher';
+
 import './body.less';
 
+const myDisp = AppDispatcher;
+
+console.log(myDisp);
+
 const SubElemText = React.createClass({
-  getDefaultProps() {
-    return {
-      text: "default description"
-    };
-  },
-  render() {
-    return (
-      <div>{this.props.text}</div>
-    );
-  }
+    getDefaultProps() {
+        return {
+            text: "default description"
+        };
+    },
+    render() {
+        return (
+            <div>{this.props.text}</div>
+        );
+    }
 });
 
 const TodoList = React.createClass({
-  render() {
-    return (
-      <ul>
-        {
-            this.props.todos.map(todo => {
-                return <li key={todo}>{todo}</li>
-            })
-        }
-      </ul>
-    );
-  }
+    render() {
+        return (
+            <ul>
+            {
+                this.props.todos.map(todo => {
+                    return <li key={todo}>{todo}</li>;
+                })
+            }
+            </ul>
+        );
+    }
 });
 
 const Body = React.createClass({
@@ -38,12 +44,13 @@ const Body = React.createClass({
     },
 
     addTodo() {
-      var todos = this.state.todos;
-      todos.push(this.state.inputText);
-      this.setState({
-          inputText: '',
-          todos: todos
-      });
+        const todos = this.state.todos;
+
+        todos.push(this.state.inputText);
+        this.setState({
+            inputText: '',
+            todos
+        });
     },
 
     getInitialState() {
@@ -59,8 +66,8 @@ const Body = React.createClass({
                 <SubElemText text="This is decription"/>
                 <SubElemText />
                 <input type="text"
-                       value={this.state.inputText}
-                       onChange={this.handleChange}/>
+                        value={this.state.inputText}
+                        onChange={this.handleChange}/>
                 <button onClick={this.addTodo}>
                     Add
                 </button>
@@ -72,7 +79,5 @@ const Body = React.createClass({
 });
 
 doExamples();
-
-
 
 export default Body;
