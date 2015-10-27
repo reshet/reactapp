@@ -7,7 +7,7 @@ var output_options = {
 
 module.exports = {
     entry: {
-        todo: __dirname + '/todo/todo.jsx'
+        app: __dirname + '/app/app.jsx'
     },
     output: {
         path        : 'public/',
@@ -32,6 +32,7 @@ module.exports = {
         ]
     },
     resolve: {
+        root: __dirname + '/app',
         extensions: [ '', '.js', '.jsx' ]
     },
     stats: output_options,

@@ -1,7 +1,8 @@
-import React    from 'react';
-import $        from 'jquery';
-import App      from './body/Body';
+import React            from 'react';
+import ReactDOM         from 'react-dom';
+import $                from 'jquery';
+import TodoComponent    from './pages/todo/TodoComponent';
 
 $(() => {
-    React.render(<App />, document.getElementById('app-container'))
+    ReactDOM.render(<TodoComponent />, document.getElementById('app-container'));
 });
