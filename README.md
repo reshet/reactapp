@@ -1,10 +1,11 @@
-# jsx-suit
-Quick-start suit for JSX development
+# React & Flux Todo App
+Quick-start suit for React & Flux development
 
 Includes:
   - Grunt task-runner
   - Webpack (with dev-server)
   - React
+  - Flux
   - ES6 and JSX compiler (babel)
   - LESS compiler
   - Nodemon server
